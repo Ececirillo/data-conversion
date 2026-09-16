@@ -1,5 +1,3 @@
-#CHALLENGE 1 TASK 1
-
 import math
 
 def temp_calc(d_out):
