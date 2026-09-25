@@ -1,20 +1,16 @@
 import math
 
-def temp_calc(d_out):
+def temp_calc(d_out, Rext, BETA, R0):
 	
-	#Values
-	R_ext = 7680.0
-	R0 = 10000.0
-	T0 = 298.15
-	BETA = 3435
-
+	T0 = 298.15 #Temperature in Kelvin relative to the reference value of 25 °C
+	
 	#SIGN MANAGEMENT
 	if d_out >= 1024:
 		d_out_signed = d_out - 2048
 	else:
 		d_out_signed = d_out
 
-	#R_ntc and ratio calcuation
+	#R_ntc and ratio calculation
 	ratio = 0.174387 + (d_out_signed*0.010404)/8
 	R_ntc = R_ext * (1.0 / ratio - 1.0)
 
